@@ -1,6 +1,5 @@
 from flask import Flask
 from .index import bp
-from waitress import serve
 
 
 def create_app(test_config=None):
