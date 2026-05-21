@@ -9,10 +9,11 @@
     <meta property="og:title" content="Weather">
     <meta property="og:description" content="A simple weather app built with Flask.">
     <meta property="og:image" content="">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="https://abohawa-58vo.onrender.com/">
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='images/weather.png') }}" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,18 +28,23 @@
             <p>Get Your Daily Weather Forecast</p>
         </div>
     </heading>
-    <hr>
-    <nav>
+    <hr id="upper">
+    <nav id="#">
+        <div id="link">
+            <a href="#">HOME</a>
+            <a href="#about">ABOUT</a>
+        </div>
         <div id="search-container">
-            <input type="search" name="search" id="search">
+            <input type="search" name="search" id="search" placeholder="Search">
+            <img src="../static/images/search.png" alt="search">
             <div id="suggestions"></div>
         </div>
     </nav>
     <main>
 
     </main>
-    <hr>
-    <footer>
+    <hr id="lower">
+    <footer id="#about">
         <p>&copy; <span id="l">Abohawa</span> • Made by <span id="name">Ranajit Mitra</span></p>
         <p>Weather data provided by <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a> and <a href="https://photon.komoot.io/" target="_blank">Photon</a> for getting longitude and latitude.</p>
     </footer>
