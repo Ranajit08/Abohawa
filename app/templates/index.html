@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="A simple weather app built with Flask.">
+
     <meta property="og:title" content="Weather">
     <meta property="og:description" content="A simple weather app built with Flask.">
     <meta property="og:image" content="">
@@ -11,13 +13,17 @@
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <meta name="description" content="A simple weather app built with Flask.">
-    <title>Abohawa - Get Your Daily Weather Forecast</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    
+    <title>ABOHAWA - Get Your Daily Weather Forecast</title>
 </head>
 <body>
     <heading>
         <div id="logo">
-            <h1>Abohawa</h1>
+            <h1>ABOHAWA</h1>
             <p>Get Your Daily Weather Forecast</p>
         </div>
     </heading>
@@ -33,8 +39,8 @@
     </main>
     <hr>
     <footer>
-        <p>&copy; 2026 Abohawa • Made by Ranajit Mitra</p>
-        <p>Weather data provided by <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a> and <a href="https://photon.komoot.io/" target="_blank">Photon</a> for getting longitude and latitude</p>
+        <p>&copy; <span id="l">Abohawa</span> • Made by <span id="name">Ranajit Mitra</span></p>
+        <p>Weather data provided by <a href="https://www.weatherapi.com/" target="_blank">WeatherAPI</a> and <a href="https://photon.komoot.io/" target="_blank">Photon</a> for getting longitude and latitude.</p>
     </footer>
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
 </body>
