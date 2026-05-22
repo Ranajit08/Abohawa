@@ -21,7 +21,7 @@ def search(query):
         headers = {
             "User-Agent": "Mozilla/5.0"
         }
-        response = requests.get(url, params={'q': query, 'limit': 3}, headers=headers, timeout=5)
+        response = requests.get(url, params={'q': query, 'limit': 3, 'lang': 'en'}, headers=headers, timeout=5)
         response.raise_for_status()
 
         data = response.json()
