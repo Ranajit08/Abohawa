@@ -1,11 +1,14 @@
 let timeout;
-document.getElementById('suggestions').style.display = 'none';
+const sug = document.getElementById('suggestions');
+sug.style.display = 'none'
 document.getElementById('search').addEventListener('input', function() {
+    if (this.value == '') {
+        sug.style.display = 'none';
+    }
     clearTimeout(timeout);
     const query = this.value;
     timeout = setTimeout(() => {
         fetchWeather(query);
-        document.getElementById('suggestions').style.display = 'block';
     }, 500);
     
 });
@@ -17,11 +20,13 @@ function fetchWeather(query) {
                 const suggestions = document.getElementById('suggestions');
                 let html = '';
                 data.forEach(item => {
-                    html += `<div class="suggestion"><h4>${item.name}</h4><p>${item.state}, ${item.country}</p></div>`;
+                    html += `<button><div class="suggestion">
+                                <h4>${item.name}</h4>
+                                <p>${item.state}, ${item.country}</p>
+                                <input type="hidden" name="cordinets" value="${item.lat},${item.lon}">
+                            </div></button><hr>`;
                 });
                 suggestions.innerHTML = html;
+                sug.style.display = 'block';
             });
-    if (query === '') {
-        document.getElementById('suggestions').style.display = 'none';
     } 
-}   

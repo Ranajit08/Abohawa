@@ -37,19 +37,6 @@ footer > p > a {
     font-weight: 500;
     font-style: normal;
 }
-#suggestions {
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 200px;
-    width: 300px;
-    overflow-y: scroll;
-}
 footer {
     background-color: transparent;
     height: 100px;
@@ -65,27 +52,6 @@ footer {
 #logo {
     padding-left: 30px;
     padding-top: 5px;
-}
-#search-container > img {
-    position: absolute; 
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%); 
-    width: 20px; 
-    height: 20px;
-}
-#search {
-    padding: 5px;
-    padding-left: 40px;
-    height: 40px;
-    width: 250px;
-    border-radius: 10px;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 2px 2px 7px black;
-}
-#search-container {
-    position: relative;
-    display: flex;
 }
 #link {
     display: flex;
@@ -105,6 +71,7 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    height: 60px;
 }
 #upper {
     border: 0.1px solid rgb(255, 255, 255);
@@ -151,6 +118,97 @@ main > #g {
     padding: 20px;
     border: 0.1px solid white;
 }
+#search-container > div > img {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+#search-container > div > #search {
+    position: absolute;
+    top: 0px;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 15px;
+    padding: 10px;
+    padding-left: 40px;   
+}
+#search-container > div {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;    
+    justify-content: center;
+}
+#search-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 20vw;
+    top: -20px;
+}
+#search-container > div > #search:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(76, 132, 196, 0.5);
+}
+#search-container > div > #search::placeholder {
+    color: rgba(76, 132, 196, 0.5);
+}
+#suggestions {
+    position: absolute;
+    top: 45px;
+    width: 200px;
+    height: 150px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px rgba(76, 132, 196, 0.5);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+#suggestions::-webkit-scrollbar {
+  display: none;
+}
+#search-container > #suggestions {
+    position: absolute;
+    left: -3px;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    flex-direction: column;
+}
+.suggestion {
+    text-decoration: none;
+    color: black;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    padding-right: 100%;
+    width: 185px;
+    cursor: pointer;
+}
+#suggestions > button  {
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: left;
+    padding-right: 100%;
+    width: 185px;
+}
+
 
 @media screen and (max-width: 600px) {
     nav {
@@ -174,5 +232,21 @@ main > #g {
     }
     #greet {
         width: 95%;
+    }
+    #search-container {
+        margin-right: 0px;
+        top: 3px;
+        right: 100px;
+    }
+    nav > #link > a {
+        font-size: 14px;
+    }
+    nav {
+        height: 60px;
+        display: flex;
+        gap: 3px;
+        align-items: center;
+        justify-content:flex-start;
+
     }
 }
