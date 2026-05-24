@@ -38,7 +38,28 @@ def search(query):
                 'lon': coords[0],
                 'lat': coords[1]
             })
-        return jsonify(res)
+        seen = set()
+        unique_res = []
+        for item in res:
+            if item['name'] not in seen:
+                seen.add(item['name'])
+                unique_res.append(item)
+
+        return jsonify(unique_res)
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching search results: {e}")
+        return jsonify({'error': 'Failed to fetch search results'}), 500
+
+# this route is for fetching weather data from api.
+@bp.route('/get/<lat>&<lon>')
+def getWeather(lat, lon):
+    url = f' http://api.weatherapi.com/v1/current.json?key={SECRET_KEY}&q={lat},{lon}'
+
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        return jsonify(response.json())
+    
     except requests.exceptions.RequestException as e:
         print(f"Error fetching search results: {e}")
         return jsonify({'error': 'Failed to fetch search results'}), 500

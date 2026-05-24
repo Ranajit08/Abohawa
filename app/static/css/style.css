@@ -3,8 +3,10 @@ html {
 }
 body {
     background-image: url('../images/wp.jpg');
-    background-repeat: repeat;
+    background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
+    min-height: 100vh;
     background-attachment: fixed;
     font-family: "Ubuntu", sans-serif;
     font-weight: 300;
@@ -100,7 +102,7 @@ main > #g {
     justify-content: center;
     align-items: center;
     margin-top: 4vw;
-    margin-bottom: 1vw;
+    margin-bottom: 11vw;
 }
 #about > div > a > img {
     height: 50px;
@@ -162,8 +164,8 @@ main > #g {
 #suggestions {
     position: absolute;
     top: 45px;
-    width: 200px;
-    height: 150px;
+    width: 195px;
+    height: auto;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0px 0px 5px rgba(76, 132, 196, 0.5);
@@ -171,12 +173,6 @@ main > #g {
     flex-direction: column;
     gap: 10px;
     padding: 5px;
-    overflow-y: scroll;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-#suggestions::-webkit-scrollbar {
-  display: none;
 }
 #search-container > #suggestions {
     position: absolute;
@@ -247,6 +243,9 @@ main > #g {
         gap: 3px;
         align-items: center;
         justify-content:flex-start;
-
+    }
+    #greet {
+        margin-top: 5vw;
+        margin-bottom: 30vw;
     }
 }
