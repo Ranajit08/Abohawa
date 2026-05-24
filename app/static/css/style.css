@@ -248,4 +248,12 @@ main > #g {
         margin-top: 5vw;
         margin-bottom: 30vw;
     }
+    body {
+        background-image: url('../images/wp2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        background-attachment: fixed;
+    }
 }
