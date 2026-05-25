@@ -207,6 +207,14 @@ main > #g {
 
 
 @media screen and (max-width: 600px) {
+    body {
+        background-image: url('../images/wp2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+        background-attachment: scroll;
+    }
     nav {
         flex-direction: column;
         gap: 2vw;
@@ -231,7 +239,7 @@ main > #g {
     }
     #search-container {
         margin-right: 0px;
-        top: 3px;
+        top: 5px;
         right: 100px;
     }
     nav > #link > a {
@@ -247,13 +255,5 @@ main > #g {
     #greet {
         margin-top: 5vw;
         margin-bottom: 30vw;
-    }
-    body {
-        background-image: url('../images/wp2.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        min-height: 100vh;
-        background-attachment: fixed;
     }
 }
