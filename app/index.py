@@ -19,13 +19,13 @@ def search(query):
     url = f'{base_url}search.json?key={SECRET_KEY}&q={query}'
 
     try:
-        response = requests.get(url, params={'q': query, 'lang': 'en'}, timeout=5)
+        response = requests.get(url, params={'lang': 'en', 'limit': 3})
         response.raise_for_status()
 
         data = response.json()
         res = []
 
-        for item in data:
+        for item in data[:3]:
             res.append({
                 'name': item.get('name'),
                 'country': item.get('country'),
