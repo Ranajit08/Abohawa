@@ -44,39 +44,37 @@ function getWeatherInfo(lat, lon) {
             if (json.is_day == 1) {
                 img = './static/images/icons8-sun-48.png'
             } else {
-                img = './static/images/icons8-night-50.png'
+                img = './static/images/icons8-moon-60.png'
             }
 
             let html = `<div id="card">
                             <div id="top">
-                                <div id="sub-top">
-                                    <div id="location">
-                                        <div id="sub-img-top">
-                                            <h4>${json.name}</h4>
-                                            <img src="${img}" alt="${json.is_day}">
-                                        </div>
-                                        <p>${json.name2}</p>
-                                    </div>
-                                    <div id="temp">
-                                        <h2>Tempreture: ${json.temp_c} ℃</h2>
-                                        <h6>Feels like: ${json.feelslike_c} ℃</h6>
-                                    </div>
-                                </div>
-                                <div id="lower-top">
+                                <div id="temp">
                                     <img src='${json.c_icon_url}' alt='${json.c_text}'>
                                     <p>${json.c_text}</p>
                                 </div>
+                                <h2>Tempreture: ${json.temp_c} ℃</h2>
+                                <h6>Feels like: ${json.feelslike_c} ℃</h6>       
                             </div>
                             <div id="bottom">
-                                <div id="hum">
-                                    <img src="./static/images/icons8-humidity-48.png" alt="humidity">
-                                    <p class='strong'>Humidity:</p>
-                                    <p>${json.humidity}</p>
+                                <div id="location">
+                                    <div id="sub-img-top">
+                                        <h4>${json.name}</h4>
+                                        <img src="${img}" alt="${json.is_day}">
+                                    </div>
+                                    <p>${json.name2}</p>
                                 </div>
-                                <div id="wind">
-                                    <img src="./static/images/icons8-windsock-50.png" alt="wind">
-                                    <p class='strong'>Wind(kph):</p>
-                                    <p>${json.wind_kph}</p>
+                                <div id="k">
+                                    <div id="hum">
+                                        <img src="./static/images/icons8-humidity-48.png" alt="humidity">
+                                        <p class='strong'>Humidity:</p>
+                                        <p>${json.humidity}%</p>
+                                    </div>
+                                    <div id="wind">
+                                        <img src="./static/images/icons8-windsock-50.png" alt="wind">
+                                        <p class='strong'>Wind(kph):</p>
+                                        <p>${json.wind_kph}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>`;

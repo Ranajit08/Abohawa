@@ -199,7 +199,108 @@ main > #g {
     padding-right: 100%;
     width: 185px;
 }
-
+#card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:row-reverse;
+    gap: 10px;
+    background-color: rgba(76, 132, 196, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    border: 0.1px solid white;
+    box-shadow: 1px 1px 10px white;
+    margin-bottom: 2vw;
+}
+#sub-img-top{
+    display: flex;
+    justify-content:space-between;
+    gap: 1vw;
+    align-items: center;
+    flex-direction: row;
+}
+#wind, #hum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1vw;
+    width: 100%;
+    border: 0.1px solid white;
+    box-shadow: 1px 1px 10px white;
+    background-color: rgba(76, 132, 196, 0.3);
+    border-radius: 15px;
+}
+#top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 18vw;
+    padding: 20px;
+    border: 0.1px solid white;
+    box-shadow: 1px 1px 10px white;
+    background-color: rgba(76, 132, 196, 0.3);
+    border-radius: 15px;
+    line-height: 1.00;
+}
+#temp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+#temp > img {
+    height: 10vw;
+    width: 10vw;
+}
+#location {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(76, 132, 196, 0.3);
+    border-radius: 15px;
+    padding: 10px;
+    border: 0.1px solid white;
+    box-shadow: 1px 1px 10px white;
+}
+#bottom {
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    flex-direction: column;
+    gap: 1vw;
+}
+#lower-top > img {
+    height: 10vw;
+    width: 10vw;
+}
+#sub-img-top > img {
+    height: 3vw;
+    width: 3vw;
+}
+#temp {
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 500;
+    font-style: normal; 
+}
+#hum, #wind {
+    width: 21vw;
+}
+#k {
+    display: flex;
+    justify-content: left;
+    align-items:flex-start;
+    flex-direction: column;
+    gap: 1vw;
+}
+#location {
+    width: 20vw;
+    text-wrap: wrap;
+}
 
 @media screen and (max-width: 600px) {
     body {
@@ -250,5 +351,39 @@ main > #g {
     #greet {
         margin-top: 5vw;
         margin-bottom: 30vw;
+    }
+    #card {
+        flex-direction: column-reverse;
+        gap: 5vw;
+    }
+    #location {
+        width: 100%;
+    }
+    #temp > img {
+        height: 30vw;
+        width: 30vw;
+    }
+    #wind, #hum {
+        width: 100%;
+    }
+    #sub-img-top > img {
+        height: 10vw;
+        width: 10vw;
+    }
+    #top{
+        height: fit-content;
+        width: 90%;
+    }
+    #k {
+        justify-content: center;
+        align-items: center;
+    }
+    #bottom {
+        justify-content: center;
+        align-items: center;
+        width: 80vw;
+    }
+    #k {
+        width: 85vw;
     }
 }
